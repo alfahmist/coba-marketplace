@@ -1,25 +1,43 @@
 import logo from './logo.svg';
 import './App.css';
+import { useEffect, useState } from 'react';
+import { data } from './data/data';
+import Item from './components/Item';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [state, setState] = useState([]);
+	const [loading, setLoading] = useState(false);
+
+	useEffect(() => {
+		setLoading(true);
+		setTimeout(() => {
+			setState(data); // count is 0 here
+			setLoading(false);
+		}, 10);
+	}, [state]);
+	return (
+		<div>
+			{loading ? (
+				<h1 className='text-center'>Loading...</h1>
+			) : (
+				<>
+					<div className='flex flex-row flex-wrap gap-2'>
+						{state.map((obj) => {
+							obj.title = obj.title[0].toUpperCase() + obj.title.slice(1);
+							if (obj.description.length > 76) {
+								obj.description = obj.description.slice(0, 46) + '...';
+							}
+							return (
+								<>
+									<Item key={obj.id} data={obj} />
+								</>
+							);
+						})}
+					</div>
+				</>
+			)}
+		</div>
+	);
 }
 
 export default App;
