@@ -1,4 +1,4 @@
-const category = ['audio', 'dapur', 'elektronik', 'gaming', 'makanan'];
+const category = ['dapur', 'audio', 'elektronik', 'gaming', 'makanan'];
 const description = [
 	'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
 	"Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
@@ -16,26 +16,41 @@ const title = [
 
 const price = [1000, 2000, 3000, 4000, 5000];
 
-const random = () => {
-	for (let index = 0; index < 4; index++) {
-		if (index !== 86 && index !== 97) {
-			const imageRandom = `https://picsum.photos/id/${index}/200`;
-			const titleRandom = title[Math.floor(Math.random() * 5)];
-			const priceRandom = price[Math.floor(Math.random() * 5)];
-			const categoryRandom = category[Math.floor(Math.random() * 5)];
-			const descriptionRandom = description[Math.floor(Math.random() * 5)];
-			const element = {
-				id: index,
-				title: titleRandom,
-				price: priceRandom,
-				category: categoryRandom,
-				description: descriptionRandom,
-				image: imageRandom,
-			};
-			data.push(element);
-		}
+// const random = () => {
+// 	for (let index = 0; index < 4; index++) {
+// 		if (index !== 86 && index !== 97) {
+// 			const imageRandom = `https://picsum.photos/id/${index}/200`;
+// 			const titleRandom = title[Math.floor(Math.random() * 5)];
+// 			const priceRandom = price[Math.floor(Math.random() * 5)];
+// 			const categoryRandom = category[Math.floor(Math.random() * 5)];
+// 			const descriptionRandom = description[Math.floor(Math.random() * 5)];
+// 			const element = {
+// 				id: index,
+// 				title: titleRandom,
+// 				price: priceRandom,
+// 				category: categoryRandom,
+// 				description: descriptionRandom,
+// 				image: imageRandom,
+// 			};
+// 			data.push(element);
+// 		}
+// 	}
+// };
+
+const updateData = () => {
+	for (let index = 0; index < title.length; index++) {
+		console.log(index);
+		const element = {
+			id: index + 1,
+			title: title[index],
+			price: price[index],
+			category: category[index],
+			description: description[index],
+			image: `https://picsum.photos/id/${index}/200`,
+		};
+		data.push(element);
 	}
 };
-
 export const data = [];
-random();
+// random();
+updateData();
