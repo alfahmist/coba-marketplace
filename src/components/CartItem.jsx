@@ -1,15 +1,17 @@
+import { Panel } from './Panel';
+
 const CartItem = () => {
 	return (
-		<div className='w-1/2 mx-auto border-2'>
-			<div className='flex flex-row gap-8 px-4 py-2 '>
-				<input type='checkbox' className='self-start w-8 h-8' />
+		<Panel>
+			<div className='flex flex-row gap-8'>
+				<input type='checkbox' className='self-start w-10 h-10' />
 
 				<div className='flex flex-col justify-between'>
 					<div className='flex flex-row h-full gap-8'>
 						<img
 							src='https://picsum.photos/200'
 							alt=''
-							className='rounded-3xl w-28'
+							className='rounded-2xl w-28'
 						/>
 						<p>
 							Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
@@ -33,7 +35,7 @@ const CartItem = () => {
 					</div>
 				</div>
 			</div>
-		</div>
+		</Panel>
 	);
 };
 

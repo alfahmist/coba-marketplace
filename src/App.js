@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { data } from './data/data';
 import ProductItem from './components/ProductItem';
 import CartItem from './components/CartItem';
+import CartTotal from './components/CartTotal';
 
 function App() {
 	const [state, setState] = useState([]);
@@ -34,6 +35,7 @@ function App() {
 				</>
 			)}
 			<CartItem />
+			<CartTotal />
 		</div>
 	);
 }
