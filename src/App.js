@@ -3,6 +3,7 @@ import './App.css';
 import { useEffect, useState } from 'react';
 import { data } from './data/data';
 import Item from './components/Item';
+import CartItem from './components/CartItem';
 
 function App() {
 	const [state, setState] = useState([]);
@@ -27,15 +28,12 @@ function App() {
 							if (obj.description.length > 76) {
 								obj.description = obj.description.slice(0, 46) + '...';
 							}
-							return (
-								<>
-									<Item key={obj.id} data={obj} />
-								</>
-							);
+							return <Item key={obj.id} data={obj} />;
 						})}
 					</div>
 				</>
 			)}
+			<CartItem />
 		</div>
 	);
 }
