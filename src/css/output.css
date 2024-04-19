@@ -554,11 +554,6 @@ video {
   margin-right: auto;
 }
 
-.my-6 {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-
 .my-4 {
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -624,6 +619,14 @@ video {
   width: 100%;
 }
 
+.w-9 {
+  width: 2.25rem;
+}
+
+.w-8 {
+  width: 2rem;
+}
+
 .min-w-\[200px\] {
   min-width: 200px;
 }
@@ -678,6 +681,10 @@ video {
 
 .gap-8 {
   gap: 2rem;
+}
+
+.gap-1 {
+  gap: 0.25rem;
 }
 
 .self-start {
@@ -755,6 +762,11 @@ video {
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 .font-medium {
