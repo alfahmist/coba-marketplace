@@ -2,7 +2,7 @@ import { Panel } from './Panel';
 
 const CartItem = () => {
 	return (
-		<Panel>
+		<>
 			<div className='flex flex-row gap-8'>
 				<input type='checkbox' className='self-start w-10 h-10' />
 
@@ -35,7 +35,7 @@ const CartItem = () => {
 					</div>
 				</div>
 			</div>
-		</Panel>
+		</>
 	);
 };
 

@@ -1,11 +1,10 @@
 import { Button } from './Button';
-import { Panel } from './Panel';
 import { Price } from './Price';
 
 const CartTotal = () => {
 	return (
 		<>
-			<Panel>
+			<div className='flex flex-col h-full'>
 				<h5 className='mb-2 font-medium'>Ringkasan Belanja</h5>
 				<div className='flex flex-row justify-between'>
 					<p>Total</p>
@@ -13,7 +12,7 @@ const CartTotal = () => {
 				</div>
 				<hr className='my-4' />
 				<Button>Beli(2)</Button>
-			</Panel>
+			</div>
 		</>
 	);
 };

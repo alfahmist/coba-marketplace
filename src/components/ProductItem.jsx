@@ -6,7 +6,7 @@ const ProductItem = ({ data }) => {
 		<>
 			<div className='border-2 w-[200px] flex flex-col'>
 				<img src={data.image} alt='' />
-				<div className='p-2 h-full'>
+				<div className='p-2 h-full flex flex-col'>
 					{/* <p className='text-wrap text-sm'>{data.title}</p> */}
 					<p className='text-sm mb-2 font-medium'>{data.description}</p>
 					<p className='text-sm mb-2'>category : {data.category}</p>

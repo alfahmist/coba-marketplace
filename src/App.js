@@ -5,6 +5,7 @@ import { data } from './data/data';
 import ProductItem from './components/ProductItem';
 import CartItem from './components/CartItem';
 import CartTotal from './components/CartTotal';
+import Cart from './pages/Cart';
 
 function App() {
 	const [state, setState] = useState([]);
@@ -34,8 +35,7 @@ function App() {
 					</div>
 				</>
 			)}
-			<CartItem />
-			<CartTotal />
+			<Cart />
 		</div>
 	);
 }

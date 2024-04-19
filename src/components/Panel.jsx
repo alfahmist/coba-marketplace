@@ -1,3 +1,10 @@
-export const Panel = ({ children }) => {
-	return <div className='w-1/2 mx-auto border-2 px-4 py-2'>{children}</div>;
-};
+export const Panel = ({ children, className }) =>
+	className !== undefined ? (
+		<>
+			<div className={`border-2 px-4 py-3 ${className}`}>{children}</div>
+		</>
+	) : (
+		<>
+			<div className={`border-2 px-4 py-3`}>{children}</div>
+		</>
+	);
