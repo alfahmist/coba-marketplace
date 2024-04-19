@@ -1,4 +1,4 @@
-const Item = ({ data }) => {
+const ProductItem = ({ data }) => {
 	return (
 		<>
 			<div className='border-2 w-[200px] flex flex-col'>
@@ -23,4 +23,4 @@ const Item = ({ data }) => {
 	);
 };
 
-export default Item;
+export default ProductItem;

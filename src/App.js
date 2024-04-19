@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { useEffect, useState } from 'react';
 import { data } from './data/data';
-import Item from './components/Item';
+import ProductItem from './components/ProductItem';
 import CartItem from './components/CartItem';
 
 function App() {
@@ -28,7 +28,7 @@ function App() {
 							if (obj.description.length > 76) {
 								obj.description = obj.description.slice(0, 46) + '...';
 							}
-							return <Item key={obj.id} data={obj} />;
+							return <ProductItem key={obj.id} data={obj} />;
 						})}
 					</div>
 				</>
