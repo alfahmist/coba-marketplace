@@ -37,20 +37,66 @@ const price = [1000, 2000, 3000, 4000, 5000];
 // 	}
 // };
 
-const updateData = () => {
-	for (let index = 0; index < title.length; index++) {
-		// console.log(index);
-		const element = {
-			id: index + 1,
-			title: title[index],
-			price: price[index],
-			category: category[index],
-			description: description[index],
-			image: `https://picsum.photos/id/${index}/200`,
-		};
-		data.push(element);
-	}
-};
-export const data = [];
+// const updateData = () => {
+// 	for (let index = 0; index < title.length; index++) {
+// 		// console.log(index);
+// 		const element = {
+// 			id: index + 1,
+// 			title: title[index],
+// 			price: price[index],
+// 			category: category[index],
+// 			description: description[index],
+// 			image: `https://picsum.photos/id/${index}/200`,
+// 		};
+// 		data.push(element);
+// 	}
+// };
+export const data = [
+	{
+		id: 1,
+		title: 'Laptop',
+		price: '1000',
+		category: 'Elektronik',
+		description:
+			'It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum',
+		image: 'https://picsum.photos/id/12/200',
+	},
+	{
+		id: 2,
+		title: 'Panci',
+		price: '2000',
+		category: 'dapur',
+		description:
+			'It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum',
+		image: 'https://picsum.photos/id/24/200',
+	},
+	{
+		id: 3,
+		title: 'Martabak',
+		price: '3000',
+		category: 'Makanan',
+		description:
+			'It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum',
+		image: 'https://picsum.photos/id/32/200',
+	},
+	{
+		id: 4,
+		title: 'Ikan bakar',
+		price: '4000',
+		category: 'Makanan',
+		description:
+			'It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum',
+		image: 'https://picsum.photos/id/21/200',
+	},
+	{
+		id: 5,
+		title: 'Speaker',
+		price: '5000',
+		category: 'Audio',
+		description:
+			'It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum',
+		image: 'https://picsum.photos/id/5/200',
+	},
+];
 // random();
-updateData();
+// updateData();

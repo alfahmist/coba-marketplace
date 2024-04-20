@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { data } from '../data/data';
 import ProductItem from '../components/ProductItem';
+import Navigation from '../components/Navigation';
 
 const Product = () => {
 	const [state, setState] = useState([]);
@@ -11,10 +12,11 @@ const Product = () => {
 		setTimeout(() => {
 			setState(data); // count is 0 here
 			setLoading(false);
-		}, 10);
+		}, 1000);
 	}, [state]);
 	return (
 		<>
+			<Navigation />
 			{loading ? (
 				<h1 className='text-center'>Loading...</h1>
 			) : (

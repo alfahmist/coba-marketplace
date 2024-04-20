@@ -23,6 +23,7 @@ const ProductItem = ({ item }) => {
 								quantity: 1,
 								productTitle: item.title,
 								productPrice: item.price,
+								image: item.image,
 							})
 						}
 					>

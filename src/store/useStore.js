@@ -4,21 +4,21 @@ import { produce } from 'immer';
 export const useStore = create((set, get) => ({
 	data: {
 		cart: {
-			totalItem: 6,
-			totalPrice: 9000,
+			totalItem: 0,
+			totalPrice: 0,
 			products: [
-				{
-					id: 1,
-					quantity: 1,
-					productTitle: 'Ayam Goyeng',
-					productPrice: 10000,
-				},
-				{
-					id: 2,
-					quantity: 5,
-					productTitle: 'Nasi Padang',
-					productPrice: 20000,
-				},
+				// {
+				// 	id: 1,
+				// 	quantity: 1,
+				// 	productTitle: 'Ayam Goyeng',
+				// 	productPrice: 10000,
+				// },
+				// {
+				// 	id: 2,
+				// 	quantity: 5,
+				// 	productTitle: 'Nasi Padang',
+				// 	productPrice: 20000,
+				// },
 			],
 		},
 	},
@@ -118,13 +118,25 @@ export const useStore = create((set, get) => ({
 						return obj.id === newObj.id;
 					})
 				) {
-					state.addQuantity(newObj.id);
+					state.data.cart.products = state.data.cart.products.map((obj) => {
+						if (obj.quantity < 20) if (obj.id === newObj.id) obj.quantity += 1;
+						return obj;
+					});
 				} else {
 					state.data.cart.products = [...state.data.cart.products, newObj];
-					// state.addQuantity(newObj.id);
 				}
 				state.data.cart.totalItem = state.getTotalItem();
 				state.data.cart.totalPrice = state.getTotalPrice();
+				state.addQuantity(newObj.id);
 			})
 		),
+	deleteById: (id) => {
+		set(
+			produce((state) => {
+				state.data.cart.products = state.data.cart.products.filter(
+					(obj) => obj.id !== id
+				);
+			})
+		);
+	},
 }));

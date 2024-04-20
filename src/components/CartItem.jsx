@@ -3,8 +3,13 @@ import { Panel } from './Panel';
 import { useStore } from '../store/useStore';
 
 const CartItem = ({ data }) => {
-	const { setTotalPrice, addQuantity, reduceQuantity, changeQuantity } =
-		useStore();
+	const {
+		setTotalPrice,
+		addQuantity,
+		reduceQuantity,
+		changeQuantity,
+		deleteById,
+	} = useStore();
 	const [count, setCount] = useState(data.quantity);
 
 	const productCountButton = (param) => {
@@ -33,11 +38,7 @@ const CartItem = ({ data }) => {
 
 				<div className='flex flex-col justify-between'>
 					<div className='flex flex-row h-full gap-8'>
-						<img
-							src='https://picsum.photos/200'
-							alt=''
-							className='rounded-2xl w-28'
-						/>
+						<img src={data.image} alt='' className='rounded-2xl w-28' />
 						<p>
 							Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
 							atque culpa nostrum aliquam earum omnis ipsa libero, sed, officia
@@ -47,7 +48,13 @@ const CartItem = ({ data }) => {
 						<p className='text-lg font-medium'>Rp{data.productPrice}</p>
 					</div>
 					<div className='flex flex-row gap-2 self-end'>
-						<button>Delete</button>
+						<button
+							onClick={() => {
+								deleteById(data.id);
+							}}
+						>
+							Delete
+						</button>
 						<div className='flex flex-row gap-2 border-2 rounded-lg'>
 							<button
 								className='px-2 text-xl'
