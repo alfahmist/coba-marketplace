@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { Panel } from './Panel';
+import { useStore } from '../store/useStore';
 
 const CartItem = () => {
+	const { setTotalPrice } = useStore();
 	const [count, setCount] = useState(1);
 	const productCountButton = (param) => {
 		if (param === 'tambah') {
@@ -13,7 +15,7 @@ const CartItem = () => {
 				setCount(count - 1);
 			}
 		}
-
+		setTotalPrice(count, count * 3000);
 		console.log(count);
 	};
 	return (

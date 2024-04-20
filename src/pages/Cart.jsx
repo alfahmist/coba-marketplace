@@ -1,6 +1,7 @@
 import CartItem from '../components/CartItem';
 import CartTotal from '../components/CartTotal';
 import { Panel } from '../components/Panel';
+import { useStore } from '../store/useStore';
 
 const Cart = () => {
 	return (
