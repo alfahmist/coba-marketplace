@@ -2,26 +2,28 @@ import { useEffect, useState } from 'react';
 import { Panel } from './Panel';
 import { useStore } from '../store/useStore';
 
-const CartItem = () => {
-	const { setTotalPrice } = useStore();
-	const [count, setCount] = useState(0);
+const CartItem = ({ data }) => {
+	const { setTotalPrice, addQuantity, reduceQuantity } = useStore();
+	const [count, setCount] = useState(data.quantity);
 
 	const productCountButton = (param) => {
 		// Nanti pahami lagi line ini
 		if (param === 'tambah') {
 			if (count < 20) {
-				setCount(count + 1);
-				console.log(count + 1);
-				setTotalPrice(count + 1, (count + 1) * 3000);
+				// setCount(count + 1);
+				// addQuantity(1);
+				// console.log(count + 1);
+				// ERROR BOUNDARY
+				// setTotalPrice(count + 1, (count + 1) * 3000);
 			}
 		} else {
 			if (count > 0) {
-				setCount(count - 1);
-				setTotalPrice(count - 1, (count - 1) * 3000);
+				// setCount(count - 1);
+				// setTotalPrice(count - 1, (count - 1) * 3000);
 			}
 		}
 
-		console.log(count);
+		// console.log(count);
 	};
 	return (
 		<>
@@ -41,14 +43,14 @@ const CartItem = () => {
 							incidunt odio, quo sunt ducimus eaque esse deserunt quia. Vel,
 							exercitationem!
 						</p>
-						<p className='text-lg font-medium'>Rp3000</p>
+						<p className='text-lg font-medium'>Rp{data.productPrice}</p>
 					</div>
 					<div className='flex flex-row gap-2 self-end'>
 						<button>Delete</button>
 						<div className='flex flex-row gap-2 border-2 rounded-lg'>
 							<button
 								className='px-2 text-xl'
-								onClick={() => productCountButton('minus')}
+								onClick={() => reduceQuantity(data.id)}
 							>
 								-
 							</button>
@@ -62,17 +64,17 @@ const CartItem = () => {
 									if (count > 20) {
 										setCount(20);
 										setCount(Number(20));
-										setTotalPrice(20, 20 * 3000);
+										// setTotalPrice(20, 20 * 3000);
 									} else {
 										setCount(Number(event.target.value));
-										setTotalPrice(count, count * 3000);
+										// setTotalPrice(count, count * 3000);
 									}
 								}}
-								value={count}
+								value={data.quantity}
 							/>
 							<button
 								className='px-2 text-xl'
-								onClick={() => productCountButton('tambah')}
+								onClick={() => addQuantity(data.id)}
 							>
 								+
 							</button>

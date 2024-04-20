@@ -4,18 +4,30 @@ import { Panel } from '../components/Panel';
 import { useStore } from '../store/useStore';
 
 const Cart = () => {
+	const { data, getTotalItem } = useStore();
 	return (
 		<>
 			<div className='flex flex-row w-10/12 mx-auto gap-5 justify-center'>
 				<div className='flex flex-col min-w-[600px] max-w-[800px]'>
 					<Panel className='mx-auto flex gap-2 mb-2 rounded-t-lg w-full'>
 						<input type='checkbox' className='self-start w-4 h-4 mr' />
-						<span className='leading-4'>Pilih Semua(3)</span>
+						<span className='leading-4'>Pilih Semua({getTotalItem()})</span>
 						<button className='ml-auto'>Hapus</button>
 					</Panel>
-					<Panel className='w-full'>
+					{/* ...mapping */}
+					{/* {console.log(data.cart.products)}; */}
+					{data.cart.products.map((data, index) => {
+						// console.log('data');
+						// console.log(data);
+						return (
+							<Panel key={index} className='w-full mb-2'>
+								<CartItem data={data} />
+							</Panel>
+						);
+					})}
+					{/* <Panel className='w-full mb-2'>
 						<CartItem />
-					</Panel>
+					</Panel> */}
 				</div>
 				<Panel className='flex-1 min-w-[200px] max-w-[400px]'>
 					<CartTotal />
