@@ -1,10 +1,11 @@
+import { useEffect } from 'react';
 import { useStore } from '../store/useStore';
 import { Button } from './Button';
 import { Price } from './Price';
 
 const CartTotal = () => {
-	const { updateQuantity, data, setTotalPrice } = useStore();
-
+	const { updateQuantity, data, setTotalPrice, getTotalItem } = useStore();
+	useEffect(() => {}, data);
 	return (
 		<>
 			<div className='flex flex-col h-full'>
@@ -16,10 +17,12 @@ const CartTotal = () => {
 				<hr className='my-4' />
 				<Button
 					onClick={() => {
-						console.log(data);
+						let a = getTotalItem();
+						console.log(a);
 					}}
 				>
-					Beli({data.cart.totalItem})
+					Beli(
+					{getTotalItem()})
 				</Button>
 				<Button
 					onClick={() => {

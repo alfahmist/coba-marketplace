@@ -3,7 +3,7 @@ import { create } from 'zustand';
 export const useStore = create((set, get) => ({
 	data: {
 		cart: {
-			totalItem: 3,
+			totalItem: 1,
 			totalPrice: 9000,
 		},
 		products: {
@@ -16,6 +16,10 @@ export const useStore = create((set, get) => ({
 				},
 			],
 		},
+	},
+	getTotalItem: () => {
+		const item = get().data.cart.totalItem;
+		return item;
 	},
 	setTotalPrice: (totalItem, totalPrice) =>
 		set((state) => ({

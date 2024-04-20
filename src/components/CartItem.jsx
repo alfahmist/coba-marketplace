@@ -1,21 +1,26 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Panel } from './Panel';
 import { useStore } from '../store/useStore';
 
 const CartItem = () => {
 	const { setTotalPrice } = useStore();
-	const [count, setCount] = useState(1);
+	const [count, setCount] = useState(0);
+
 	const productCountButton = (param) => {
+		// Nanti pahami lagi line ini
 		if (param === 'tambah') {
 			if (count < 20) {
 				setCount(count + 1);
+				console.log(count + 1);
+				setTotalPrice(count + 1, (count + 1) * 3000);
 			}
 		} else {
 			if (count > 0) {
 				setCount(count - 1);
+				setTotalPrice(count - 1, (count - 1) * 3000);
 			}
 		}
-		setTotalPrice(count, count * 3000);
+
 		console.log(count);
 	};
 	return (
@@ -53,9 +58,14 @@ const CartItem = () => {
 								onChange={(event) => {
 									setCount(Number(event.target.value));
 								}}
-								onBlur={() => {
+								onBlur={(event) => {
 									if (count > 20) {
 										setCount(20);
+										setCount(Number(20));
+										setTotalPrice(20, 20 * 3000);
+									} else {
+										setCount(Number(event.target.value));
+										setTotalPrice(count, count * 3000);
 									}
 								}}
 								value={count}

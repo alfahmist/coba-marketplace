@@ -39,7 +39,7 @@ const price = [1000, 2000, 3000, 4000, 5000];
 
 const updateData = () => {
 	for (let index = 0; index < title.length; index++) {
-		console.log(index);
+		// console.log(index);
 		const element = {
 			id: index + 1,
 			title: title[index],
