@@ -3,7 +3,8 @@ import { Panel } from './Panel';
 import { useStore } from '../store/useStore';
 
 const CartItem = ({ data }) => {
-	const { setTotalPrice, addQuantity, reduceQuantity } = useStore();
+	const { setTotalPrice, addQuantity, reduceQuantity, changeQuantity } =
+		useStore();
 	const [count, setCount] = useState(data.quantity);
 
 	const productCountButton = (param) => {
@@ -50,7 +51,12 @@ const CartItem = ({ data }) => {
 						<div className='flex flex-row gap-2 border-2 rounded-lg'>
 							<button
 								className='px-2 text-xl'
-								onClick={() => reduceQuantity(data.id)}
+								onClick={() => {
+									if (count > 0) {
+										setCount(count - 1);
+										reduceQuantity(data.id);
+									}
+								}}
 							>
 								-
 							</button>
@@ -58,23 +64,48 @@ const CartItem = ({ data }) => {
 								type='text'
 								className='text-md w-8 text-center'
 								onChange={(event) => {
-									setCount(Number(event.target.value));
+									setCount(event.target.value);
 								}}
 								onBlur={(event) => {
-									if (count > 20) {
+									if (Number(event.target.value) > 20) {
 										setCount(20);
-										setCount(Number(20));
-										// setTotalPrice(20, 20 * 3000);
-									} else {
-										setCount(Number(event.target.value));
-										// setTotalPrice(count, count * 3000);
+										changeQuantity(data.id, 20);
 									}
+									if (Number(event.target.value) < 0) {
+										setCount(0);
+										changeQuantity(data.id, 0);
+									}
+									if (typeof event.target.value !== 'string') {
+										setCount(data.quantity);
+										console.log(Number(event.target.value));
+									}
+									if (
+										Number(event.target.value) < 20 &&
+										Number(event.target.value) > 0
+									) {
+										setCount(event.target.value);
+										changeQuantity(data.id, Number(event.target.value));
+									}
+									if (isNaN(Number(event.target.value))) {
+										setCount(data.quantity);
+									}
+									if (Number(event.target.value) === 0) {
+										setCount(0);
+										changeQuantity(data.id, 0);
+									}
+									console.log(typeof Number(event.target.value));
+									console.log(Number(event.target.value));
 								}}
-								value={data.quantity}
+								value={count}
 							/>
 							<button
 								className='px-2 text-xl'
-								onClick={() => addQuantity(data.id)}
+								onClick={() => {
+									if (count < 20) {
+										setCount(count + 1);
+										addQuantity(data.id);
+									}
+								}}
 							>
 								+
 							</button>

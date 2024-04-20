@@ -96,6 +96,15 @@ export const useStore = create((set, get) => ({
 				});
 			})
 		),
+	changeQuantity: (id, quantity) =>
+		set(
+			produce((state) => {
+				state.data.cart.products = state.data.cart.products.map((obj) => {
+					if (obj.id === id) obj.quantity = quantity;
+					return obj;
+				});
+			})
+		),
 	increasePopulation: () => set((state) => ({ bears: state.bears + 1 })),
 	updateQuantity: (quantity) => set({ quantity: quantity }),
 	removeAllBears: () => set({ bears: 0 }),
