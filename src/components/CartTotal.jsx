@@ -35,7 +35,7 @@ const CartTotal = () => {
 					onClick={() => {
 						// setProductQuantity(1, 10);
 						// console.log('awd');
-						// console.log(data);
+						console.log(data);
 					}}
 				>
 					TEST

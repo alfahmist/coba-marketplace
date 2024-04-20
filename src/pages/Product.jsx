@@ -25,7 +25,7 @@ const Product = () => {
 							if (obj.description.length > 76) {
 								obj.description = obj.description.slice(0, 46) + '...';
 							}
-							return <ProductItem key={obj.id} data={obj} />;
+							return <ProductItem key={obj.id} item={obj} />;
 						})}
 					</div>
 				</>

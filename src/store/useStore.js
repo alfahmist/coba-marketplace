@@ -4,7 +4,7 @@ import { produce } from 'immer';
 export const useStore = create((set, get) => ({
 	data: {
 		cart: {
-			totalItem: 5,
+			totalItem: 6,
 			totalPrice: 9000,
 			products: [
 				{
@@ -81,6 +81,7 @@ export const useStore = create((set, get) => ({
 	addQuantity: (id) =>
 		set(
 			produce((state) => {
+				state.data.cart.totalItem = state.getTotalItem();
 				state.data.cart.products = state.data.cart.products.map((obj) => {
 					if (obj.quantity < 20) if (obj.id === id) obj.quantity += 1;
 					return obj;
@@ -109,4 +110,21 @@ export const useStore = create((set, get) => ({
 	updateQuantity: (quantity) => set({ quantity: quantity }),
 	removeAllBears: () => set({ bears: 0 }),
 	updateBears: (newBears) => set({ bears: newBears }),
+	addToCart: (newObj) =>
+		set(
+			produce((state) => {
+				if (
+					state.data.cart.products.some((obj) => {
+						return obj.id === newObj.id;
+					})
+				) {
+					state.addQuantity(newObj.id);
+				} else {
+					state.data.cart.products = [...state.data.cart.products, newObj];
+					// state.addQuantity(newObj.id);
+				}
+				state.data.cart.totalItem = state.getTotalItem();
+				state.data.cart.totalPrice = state.getTotalPrice();
+			})
+		),
 }));
