@@ -53,7 +53,7 @@ const CartItem = ({ data }) => {
 								className='px-2 text-xl'
 								onClick={() => {
 									if (count > 0) {
-										setCount(count - 1);
+										setCount(Number(count) - 1);
 										reduceQuantity(data.id);
 									}
 								}}
@@ -102,7 +102,7 @@ const CartItem = ({ data }) => {
 								className='px-2 text-xl'
 								onClick={() => {
 									if (count < 20) {
-										setCount(count + 1);
+										setCount(Number(count) + 1);
 										addQuantity(data.id);
 									}
 								}}
