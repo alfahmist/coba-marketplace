@@ -29,16 +29,6 @@ const ProductItem = ({ item }) => {
 					>
 						+ Cart
 					</Button>
-					<Button
-						onClick={() => {
-							console.log(data);
-						}}
-					>
-						+ teST
-					</Button>
-					{/* <button className='bg-green-600 text-white rounded-lg w-full py-2 text-sm mb-auto self-end m-auto'>
-						+ Cart
-					</button> */}
 				</div>
 			</div>
 		</>

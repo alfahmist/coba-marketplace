@@ -139,4 +139,11 @@ export const useStore = create((set, get) => ({
 			})
 		);
 	},
+	deleteAll: () => {
+		set(
+			produce((state) => {
+				state.data.cart = { totalItem: 0, totalPrice: 0, products: [] };
+			})
+		);
+	},
 }));

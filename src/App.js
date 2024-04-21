@@ -12,16 +12,6 @@ import Navigation from './components/Navigation';
 import { useStore } from './store/useStore';
 
 function App() {
-	// const router = createBrowserRouter([
-	// 	{
-	// 		path: '/',
-	// 		element: <Product />,
-	// 	},
-	// 	{
-	// 		path: '/cart',
-	// 		element: <Cart />,
-	// 	},
-	// ]);
 	const router = createBrowserRouter([
 		{
 			path: '/',
@@ -37,19 +27,6 @@ function App() {
 		<>
 			<RouterProvider router={router} />
 		</>
-		// <div>
-		// 	{/* <Navigation /> */}
-		// 	{/* <Link to='/'>Product</Link> */}
-		// 	<BrowserRouter>
-		// 		<Switch>
-		// 			<Route path='/'>
-		// 				<Product />
-		// 			</Route>
-		// 		</Switch>
-		// 	</BrowserRouter>
-		// 	{/* <Link to='/'>Cart</Link> */}
-		// 	{/* <RouterProvider router={router} />; */}
-		// </div>
 	);
 }
 

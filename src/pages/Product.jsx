@@ -5,14 +5,14 @@ import Navigation from '../components/Navigation';
 
 const Product = () => {
 	const [state, setState] = useState([]);
-	const [loading, setLoading] = useState(false);
+	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
-		setLoading(true);
-		setTimeout(() => {
-			setState(data); // count is 0 here
-			setLoading(false);
-		}, 1000);
+		// setLoading(true);
+		// setTimeout(() => {
+		setLoading(false);
+		// }, 2000);
+		setState(data); // count is 0 here
 	}, [state]);
 	return (
 		<>

@@ -31,15 +31,6 @@ const CartTotal = () => {
 					Beli(
 					{getTotalItem()})
 				</Button>
-				<Button
-					onClick={() => {
-						// setProductQuantity(1, 10);
-						// console.log('awd');
-						console.log(data);
-					}}
-				>
-					TEST
-				</Button>
 			</div>
 		</>
 	);

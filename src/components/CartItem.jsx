@@ -3,34 +3,10 @@ import { Panel } from './Panel';
 import { useStore } from '../store/useStore';
 
 const CartItem = ({ data }) => {
-	const {
-		setTotalPrice,
-		addQuantity,
-		reduceQuantity,
-		changeQuantity,
-		deleteById,
-	} = useStore();
+	const { addQuantity, reduceQuantity, changeQuantity, deleteById } =
+		useStore();
 	const [count, setCount] = useState(data.quantity);
 
-	const productCountButton = (param) => {
-		// Nanti pahami lagi line ini
-		if (param === 'tambah') {
-			if (count < 20) {
-				// setCount(count + 1);
-				// addQuantity(1);
-				// console.log(count + 1);
-				// ERROR BOUNDARY
-				// setTotalPrice(count + 1, (count + 1) * 3000);
-			}
-		} else {
-			if (count > 0) {
-				// setCount(count - 1);
-				// setTotalPrice(count - 1, (count - 1) * 3000);
-			}
-		}
-
-		// console.log(count);
-	};
 	return (
 		<>
 			<div className='flex flex-row gap-8'>
