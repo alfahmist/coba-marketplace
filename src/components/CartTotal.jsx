@@ -15,7 +15,7 @@ const CartTotal = () => {
 	} = useStore();
 	return (
 		<>
-			<div className='flex flex-col h-full'>
+			<div className='flex flex-col max-h-[200px] '>
 				<h5 className='mb-2 font-medium'>Ringkasan Belanja</h5>
 				<div className='flex flex-row justify-between'>
 					<p>Total</p>

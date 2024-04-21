@@ -58,7 +58,7 @@ export const data = [
 		price: '1000',
 		category: 'Elektronik',
 		description:
-			'It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum',
+			'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
 		image: 'https://picsum.photos/id/12/200',
 	},
 	{
@@ -67,7 +67,7 @@ export const data = [
 		price: '2000',
 		category: 'dapur',
 		description:
-			'It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum',
+			"orem Ipsum has been the industry's standard dummy text ever since the 1500s",
 		image: 'https://picsum.photos/id/24/200',
 	},
 	{
@@ -76,7 +76,7 @@ export const data = [
 		price: '3000',
 		category: 'Makanan',
 		description:
-			'It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum',
+			'It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged',
 		image: 'https://picsum.photos/id/32/200',
 	},
 	{
@@ -94,7 +94,7 @@ export const data = [
 		price: '5000',
 		category: 'Audio',
 		description:
-			'It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum',
+			'when an unknown printer took a galley of type and scrambled it to make a type specimen book',
 		image: 'https://picsum.photos/id/5/200',
 	},
 ];

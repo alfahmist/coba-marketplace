@@ -10,6 +10,7 @@ const CartItem = ({ data }) => {
 	return (
 		<>
 			<div className='flex flex-row gap-8'>
+				{/* Fitur Belum Bisa */}
 				<input type='checkbox' className='self-start w-10 h-10' />
 
 				<div className='flex flex-col justify-between'>
